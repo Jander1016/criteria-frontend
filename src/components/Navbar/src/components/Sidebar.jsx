@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logo from "../assets/react.svg";
+import logo from "../assets/crit360_logo.png";
 import { v } from "../styles/Variables";
 import {
   AiOutlineLeft,
@@ -8,6 +8,7 @@ import {
   AiOutlineSetting,
 } from "react-icons/ai";
 import { MdOutlineAnalytics, MdLogout } from "react-icons/md";
+import { RiSurveyLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
@@ -29,7 +30,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div className="imgcontent">
           <img src={logo} />
         </div>
-        <h2>codigo369</h2>
+        <h2>Crit360</h2>
       </div>
       {linksArray.map(({ icon, label, to }) => (
         <div className="LinkContainer" key={label}>
@@ -91,14 +92,14 @@ const linksArray = [
     to: "/estadisticas",
   },
   {
-    label: "Productos",
+    label: "Empleados",
     icon: <AiOutlineApartment />,
-    to: "/productos",
+    to: "/empleados",
   },
   {
-    label: "Diagramas",
-    icon: <MdOutlineAnalytics />,
-    to: "/diagramas",
+    label: "Encuestas",
+    icon: <RiSurveyLine />,
+    to: "/encuestas",
   },
   {
     label: "Reportes",

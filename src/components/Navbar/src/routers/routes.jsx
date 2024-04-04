@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Estadisticas } from "../pages/Estadisticas";
-import { Productos } from "../pages/Productos";
-import {Diagramas} from "../pages/Diagramas";
+import { Empleados } from "../pages/Empleados";
+import {Encuestas} from "../pages/Encuestas";
 import {Reportes} from "../pages/Reportes";
 export function MyRoutes() {
   return (
@@ -10,9 +10,9 @@ export function MyRoutes() {
      
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/productos" element={<Productos />} />
+        <Route path="/empleados" element={<Empleados />} />
         <Route path="/estadisticas" element={<Estadisticas />} />
-        <Route path="/diagramas" element={<Diagramas />} />
+        <Route path="/encuestas" element={<Encuestas />} />
         <Route path="/reportes" element={<Reportes />} />
       </Routes>
     
