@@ -1,5 +1,5 @@
 import { useState} from "react";
-import bghome from "../images/bghome.jpg";
+import bghome from "../assets/images/bghome.jpg"
 import DefaultLayout from "../layout/DefaultLayout";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthProvider";

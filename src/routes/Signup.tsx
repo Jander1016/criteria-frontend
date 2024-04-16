@@ -1,4 +1,4 @@
-import bghome from "../images/bghome.jpg";
+import bghome from "../assets/images/bghome.jpg"
 import DefaultLayout from "../layout/DefaultLayout";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
