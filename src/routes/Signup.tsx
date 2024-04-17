@@ -11,6 +11,7 @@ function Signup() {
     const [lastName, setLastName] = useState("");
     const [department, setDepartment] = useState("");
     const [password, setPassword] = useState("");
+    const [cargo, setCargo] = useState("");
     //const [error, setError] = useState("");
     //const [loading, setLoading] = useState(false);
     //const [success, setSuccess] = useState(false);
@@ -92,6 +93,22 @@ function Signup() {
     </option>
    
 </select>
+
+              <div>
+                        <input
+                          id="cargo"
+                          name="cargo"
+                          type="text"
+                          autoComplete="cargo"
+                          required
+                          placeholder="Cargo"
+                          value={cargo}
+                          onChange={(e) => setCargo(e.target.value)}
+                          className="block w-full rounded-md border-0  bg-opacity-40 py-1.5 px-2 text-gray-700 shadow-sm ring-1 ring-inset outline-none  ring-gray-400 placeholder:text-gray-400 text-base focus:border-orange-500 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
+                        />
+                  
+                    </div>
+
 
                     <div>
                         <input
