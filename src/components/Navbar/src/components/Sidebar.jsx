@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import logo from "../assets/crit360_logo.png";
-import { v } from "../styles/Variables";
+import whiteLogo from "../assets/white_logocrit360.png";
+import { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { ThemeContext } from "../App";
 import {
   AiOutlineLeft,
   AiOutlineHome,
@@ -9,16 +12,21 @@ import {
 } from "react-icons/ai";
 import { MdOutlineAnalytics, MdLogout } from "react-icons/md";
 import { RiSurveyLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { ThemeContext } from "../App";
+import { v } from "../styles/Variables";
+
 export function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const [logoSrc, setLogoSrc] = useState(logo);
   const ModSidebaropen = () => {
     setSidebarOpen(!sidebarOpen);
   };
   const { setTheme, theme } = useContext(ThemeContext);
+
   const CambiarTheme = () => {
-    setTheme((theme) => (theme === "light" ? "dark" : "light"));
+    setTheme((theme) => {
+      const newTheme = theme === "light" ? "dark" : "light";
+      setLogoSrc(newTheme === "light" ? logo : whiteLogo);
+      return newTheme;
+    });
   };
 
   return (
@@ -28,7 +36,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
       </button>
       <div className="Logocontent">
         <div className="imgcontent">
-          <img src={logo} />
+          <img src={logoSrc} alt="logo" />
         </div>
         <h2>Crit360</h2>
       </div>
@@ -79,6 +87,7 @@ export function Sidebar({ sidebarOpen, setSidebarOpen }) {
     </Container>
   );
 }
+
 //#region Data links
 const linksArray = [
   {
@@ -156,25 +165,25 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding-bottom: ${v.lgSpacing};
     .imgcontent {
       display: flex;
       img {
-        max-width: 100%;
+        max-width: 80%;
         height: auto;
       }
       cursor: pointer;
       transition: all 0.3s;
-      transform: ${({ isOpen }) => (isOpen ? `scale(0.7)` : `scale(1.5)`)};
+      transform: ${({ isOpen }) => (isOpen ? `scale(0.3)` : `scale(0.8)`)};
     }
     h2 {
       display: ${({ isOpen }) => (isOpen ? `block` : `none`)};
+      margin-right: 40px;
+      color: #fe7235;
     }
   }
   .LinkContainer {
     margin: 8px 0;
-   
     padding: 0 15%;
     :hover {
       background: ${(props) => props.theme.bg3};
@@ -185,11 +194,10 @@ const Container = styled.div`
       text-decoration: none;
       padding: calc(${v.smSpacing}-2px) 0;
       color: ${(props) => props.theme.text};
-      height:50px;
+      height: 50px;
       .Linkicon {
         padding: ${v.smSpacing} ${v.mdSpacing};
         display: flex;
-
         svg {
           font-size: 25px;
         }
@@ -260,7 +268,6 @@ const Container = styled.div`
               bottom: 0;
               background: ${({ themeUse }) =>
                 themeUse === "light" ? v.lightcheckbox : v.checkbox};
-
               transition: 0.4s;
               &::before {
                 position: absolute;
@@ -274,7 +281,6 @@ const Container = styled.div`
               }
               &.round {
                 border-radius: 34px;
-
                 &::before {
                   border-radius: 50%;
                 }

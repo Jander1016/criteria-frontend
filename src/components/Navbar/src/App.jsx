@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import reactLogo from "./assets/react.svg";
+
 import { MyRoutes } from "./routers/routes";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";

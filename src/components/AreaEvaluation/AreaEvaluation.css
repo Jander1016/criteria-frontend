@@ -1,0 +1,244 @@
+
+/* Survey styles */
+.survey-wrapper {
+  font-family: Open Sans, sans-serif;
+  margin: 5%;
+  padding: 2%;
+  border: 1px solid rgba(229, 229, 229, 1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 6px -3px rgba(0, 0, 0, 0.2); 
+}
+
+
+.survey-header {
+  justify-content: center;
+  border: 1px solid rgba(229, 229, 229, 1);
+  border-bottom: none;
+  display: flex;
+  width: 100%;
+  padding: 1px;
+}
+
+.survey-header-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.crit360-icon {
+  aspect-ratio: 1;
+  object-fit: auto;
+  object-position: center;
+  width: 32px;
+  margin: auto auto;
+}
+
+.survey-content {
+  background-color: #f7f7f7;
+  display: flex;
+  padding-bottom: 80px;
+  flex-direction: column;
+}
+
+.survey-page {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  margin: 26px 0 30px;
+  padding: 8px 24px 16px;
+}
+
+.editable-areatitle {
+  color: #909090;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.area-description {
+  color: #909090;
+  font-weight: normal;
+}
+
+.survey-question {
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  padding: 32px 40px 64px;
+}
+
+.question-text {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  justify-content: space-between;
+}
+
+.question-text p {
+  color: #161616;
+  line-height: 24px;
+}
+
+.required-indicator {
+  color: #e60a3e;
+  line-height: 150%;
+  align-self: start;
+}
+
+/*_______________________________*/
+
+.rating-scale {
+  display: flex;
+  margin-top: 16px;
+  gap: 8px;
+  color: #161616;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 150%;
+}
+
+.rating-options {
+  display: flex;
+  flex-direction: column;
+  padding: 1px 0;
+}
+
+.rating-options-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* Editable input and textarea styles */
+.editable-title,
+.editable-textarea,
+.editable-areatitle,
+.editable-questiontext {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.editable-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FE7235;
+  margin-top: 8px;
+}
+
+.editable-title::placeholder,
+.editable-textarea::placeholder {
+  color: inherit;
+}
+
+.editable-textarea {
+  font-size: 14px;
+  font-weight: normal;
+  color: #909090;
+  margin-top: 8px;
+  resize: none;
+}
+
+.editable-areatitle{
+  font-weight: bold;
+  color: #00ABE8;
+}
+
+.editable-questiontext{
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+
+
+
+.rating-scale .likert {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 35px;
+  display: block;
+  border-bottom: 2px solid #efefef;
+}
+
+.rating-scale .likert:last-of-type {
+  border-bottom: 0;
+}
+
+.rating-scale .likert:before {
+  content: '';
+  position: relative;
+  top: 11px;
+  left: 9.5%;
+  display: block;
+  background-color: #FE7235;
+  height: 2px;
+  width: 78%;
+  box-shadow: 0 2px 4px rgba(254, 114, 53, 0.5); /* Añadir sombra */
+  z-index: 0; /* Establecer un valor negativo para asegurar que esté detrás de los círculos */
+}
+
+.rating-scale .likert li {
+  position: relative; /* Añadir posición relativa */
+  display: inline-block;
+  width: 19%;
+  text-align: center;
+  vertical-align: top;
+  z-index: 1; /* Establecer un valor positivo para asegurar que estén delante de la línea */
+}
+
+.rating-scale .likert li input[type=radio] {
+  display: none;
+}
+
+.rating-scale .likert li label {
+  display: inline-block;
+  margin-top: -10px;
+  width: 40px; /* Tamaño del botón */
+  height: 40px; /* Tamaño del botón */
+  border-radius: 50%; /* Hacer el botón circular */
+  line-height: 40px; /* Centrar el número */
+  background-color: #ffffff; /* Color del botón */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  cursor: pointer; /* Cursor de la mano */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones */
+}
+
+.rating-scale .likert li input[type=radio]:checked + label {
+  background-color: #67ab49; /* Color de fondo cuando seleccionado */
+  color: #fff; /* Color del número cuando seleccionado */
+  transform: scale(1.1); /* Efecto de escala al seleccionar */
+}
+
+.rating-scale .buttons {
+  margin: 30px 0;
+  padding: 0 4.25%;
+  text-align: right;
+}
+
+.rating-scale .buttons button {
+  padding: 10px 20px; 
+  background-color: #67ab49;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+.rating-scale .buttons .submit {
+  background-color: #a2e586;
+}
+
+
+
+.rating-scale .buttons .submit:hover {
+  background-color: #9c27b0;
+  color: #fff;
+  font-weight: bold;
+}
