@@ -27,7 +27,7 @@ function Signup() {
     return (
         <DefaultLayout>
         <>
-       
+      
           <section className="flex h-screen  mt-0.3">
             <article className="flex w-full">
               {/* Sidebar */}
@@ -35,7 +35,7 @@ function Signup() {
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                   {/* <img className="mx-auto h-20 w-auto" src={logo} alt="Criteria" /> */}
                   <h2 className="mt-10 text-left text-3xl  leading-9 tracking-widest text-black 700 sm:text-2xl sm:leading-900">
-                   Registro
+                    Registro
                   </h2>
                   <form className="space-y-6 mt-10">
                   <div>
@@ -53,7 +53,7 @@ function Signup() {
                           // })}
                           className="block w-full rounded-md border-0  bg-opacity-40 py-1.5 px-2 text-gray-700 shadow-sm ring-1 ring-inset outline-none  ring-gray-400 placeholder:text-gray-400 text-base focus:border-orange-500 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                         />
-                     
+                    
                     </div>
                     <div>
                         <input
@@ -70,7 +70,7 @@ function Signup() {
                           // })}
                           className="block w-full rounded-md border-0  bg-opacity-40 py-1.5 px-2 text-gray-700 shadow-sm ring-1 ring-inset outline-none  ring-gray-400 placeholder:text-gray-400 text-base focus:border-orange-500 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                         />
-                     
+                    
                     </div>
 
                     <select className="block w-full rounded-md border-0  bg-opacity-40 py-1.5 px-2 text-gray-700 shadow-sm ring-1 ring-inset outline-none  ring-gray-400 placeholder:text-gray-400 text-base focus:border-orange-500 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
@@ -91,7 +91,7 @@ function Signup() {
     <option value="formacion">
         Formación
     </option>
-   
+  
 </select>
 
               <div>
