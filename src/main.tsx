@@ -8,8 +8,13 @@ import Signup from './routes/Signup.tsx';
 import Login from './routes/Login.tsx';
 import ProtectedRoute from './routes/ProtectedRoute.tsx';
 import { AuthProvider } from './auth/AuthProvider.tsx';
+import StartPage from './routes/StartPage.tsx';
 
 const router = createBrowserRouter([
+  { 
+    path:"/startpage",   
+    element: <StartPage />
+  },
   { 
       path:"/",   
       element: <Login />
