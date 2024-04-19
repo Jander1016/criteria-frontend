@@ -2,7 +2,7 @@ import bghome from "../assets/images/bghome.jpg"
 import DefaultLayout from "../layout/DefaultLayout";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../auth/AuthProvider";
+// import { useAuth } from "../contexts/AuthProvider";
 
 function Signup() {
 
@@ -16,11 +16,11 @@ function Signup() {
     //const [success, setSuccess] = useState(false);
     //const [message, setMessage] = useState("");
    
-    const auth = useAuth();
+    // const auth = useAuth();
 
-    if (auth.isAuthenticated) {
-        return <Navigate to="/dashboard" />
-    }
+    // if (auth.isAuthenticated) {
+    //     return <Navigate to="/dashboard" />
+    // }
 
 
     return (

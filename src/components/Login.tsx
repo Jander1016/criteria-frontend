@@ -1,19 +1,30 @@
-import { useState} from "react";
+import { useContext, useState} from "react";
 import bghome from "../assets/images/bghome.jpg"
 import DefaultLayout from "../layout/DefaultLayout";
-import { Navigate } from "react-router-dom";
-import { useAuth } from "../auth/AuthProvider";
+// import { Navigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthProvider";
+import { useForm } from "react-hook-form";
+import { AuthUser } from "../interfaces/UsersInterface";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const auth = useAuth();
+    const { register, handleSubmit } = useForm<AuthUser>();
+    const { logInUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    if (auth.isAuthenticated) {
-        return <Navigate to="/dashboard" />
-    }
+    const handleLogIn = async (data: AuthUser): Promise<void> => {
+      const userData = await logInUser(data);
+      if (!userData) {
+        navigate("/login");
+      } else {
+        navigate("/protected")
+      }
+    }    
+
     return (
         <DefaultLayout>
         <>
@@ -26,20 +37,17 @@ function Login() {
                   <h2 className="mt-10 text-left text-3xl  leading-9 tracking-widest text-black 700 sm:text-2xl sm:leading-900">
                     Acceder
                   </h2>
-                  <form className="space-y-6 mt-10">
+                  <form className="space-y-6 mt-10" onSubmit={handleSubmit(handleLogIn)}>
                     <div>
                         <input
                           id="email"
-                          name="email"
                           type="email"
                           autoComplete="email"
                           required
                           placeholder="Email"
+                          {...register("email")} 
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          // {...register("email", {
-                          //   required: true,
-                          // })}
                           className="block w-full rounded-md border-0  bg-opacity-40 py-1.5 px-2 text-gray-700 shadow-sm ring-1 ring-inset outline-none  ring-gray-400 placeholder:text-gray-400 text-base focus:border-orange-500 focus:ring-2 focus:ring-inset focus:ring-orange-600 sm:text-sm sm:leading-6"
                         />
                     
@@ -50,10 +58,10 @@ function Login() {
                       <div className="mt-2">
                         <input
                           id="password"
-                          name="password"
                           type="password"
                           autoComplete="current-password"
                           placeholder="Password"
+                          {...register("password")}                           
                           required
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}

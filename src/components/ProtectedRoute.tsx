@@ -2,10 +2,12 @@
 
 import { Outlet, Navigate } from "react-router-dom";
 //import { useState} from "react";
-import { useAuth } from "../auth/AuthProvider";
+import { AuthContext } from "../contexts/AuthProvider";
+import { useContext } from "react";
 
 export default function ProtectedRoute(){
-    const auth = useAuth(); //aqui he usado un hook que he creado en AuthProvider.tsx y el valor x defecto es false en la linea 14 de AuthProvider.tsx
+    const { user } = useContext(AuthContext);//aqui he usado un hook que he creado en AuthProvider.tsx y el valor x defecto es false en la linea 14 de AuthProvider.tsx
     
-    return auth.isAuthenticated ? <Outlet /> : <Navigate to="/" />  
+    console.log("User: " + JSON.stringify(user));
+    return user ? <Outlet /> : <Navigate to="/" />  
     } 
