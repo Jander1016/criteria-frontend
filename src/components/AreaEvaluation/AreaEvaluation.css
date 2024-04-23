@@ -1,0 +1,25 @@
+.area-evaluation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.area-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.area-options label {
+  margin-bottom: 5px;
+}
+
+.area-options select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px; /* Ajusta el ancho según sea necesario */
+}
+
+.area-options select {
+  width: 100%; /* Ajusta el ancho según sea necesario */
+}

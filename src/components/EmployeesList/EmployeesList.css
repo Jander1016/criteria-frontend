@@ -1,0 +1,51 @@
+/* EmployeesList.css */
+
+.employees-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.employee-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.employee-details {
+  flex-grow: 1;
+}
+
+.employee-details h3 {
+  margin: 0;
+}
+
+.employee-actions {
+  display: flex;
+  align-items: center;
+}
+
+.employee-actions select {
+  margin-right: 10px;
+}
+
+.add-survey-icon,
+.details-icon {
+  cursor: pointer;
+}
+
+.add-survey-icon:hover,
+.details-icon:hover {
+  cursor: pointer;
+}
