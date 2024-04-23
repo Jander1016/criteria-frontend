@@ -1,0 +1,28 @@
+.create-survey-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+.survey-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.survey-section label {
+  margin-bottom: 5px;
+}
+
+.survey-section input,
+.survey-section textarea,
+.survey-section select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px; /* Ajusta el ancho según sea necesario */
+}
+
+.survey-section select {
+  width: 100%; /* Ajusta el ancho según sea necesario */
+}
