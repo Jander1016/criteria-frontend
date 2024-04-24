@@ -1,0 +1,12 @@
+.SurveyItem {
+  border: 1px solid silver;
+  line-height: 1.5em;
+  margin: 15px 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+.SurveyItem a {
+  display: block;
+  padding: 10px;
+}
