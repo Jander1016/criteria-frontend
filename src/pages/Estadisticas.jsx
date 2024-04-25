@@ -1,34 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import Departments from './Departments';
-import Employees from './Employees';
-import { deleteToken, getToken } from './Tools/auth-helper.js';
-import { useNavigate } from "react-router-dom";
-import { prefixURLBackend } from './Tools/URLs.js';
-import './CRUD.css';
+import React from "react";
+import styled from "styled-components";
 
-export default function CRUD() {
-    const navigate = useNavigate();
 
-    const logoutAndGoMain = () => {
-        deleteToken();
-        navigate("/", { replace: true });
-    };
-
-    return (
-        <div>
-            <ul className='navigationBar'>
-                <li>
-                    <a href="" onClick={() => logoutAndGoMain()}>Logout</a>
-                </li>
-            </ul>
-
-            <div className='crudContentDiv'>
-                <br/><br/>
-                <Departments />
-                <br/><br/><br/>
-                <Employees />
-                <br/><br/>
-            </div>
-        </div>
-    );
+export function Estadisticas() {
+  return (
+    <Container>
+      <h1>Estadistica</h1>
+      <ContentWrapper>
+        
+      </ContentWrapper>
+    </Container>
+  );
 }
+
+const Container = styled.div`
+  height: 100vh;
+`;
+
+const ContentWrapper = styled.div`
+  max-width: 80%;
+  margin: 0 auto;
+`;
+
+export default Estadisticas;
