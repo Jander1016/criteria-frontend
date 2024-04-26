@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SurveyEditor.css';
 import Modal from 'react-modal';
+import EditSurveyModal from './EditSurveyModal'; // Asegúrate de importar correctamente el componente EditSurveyModal
 
 const SurveyEditor = () => {
   const [surveyTitle, setSurveyTitle] = useState('');
@@ -129,17 +130,52 @@ const SurveyEditor = () => {
   };
 
   const handleCloseEvaluationListModal = () => {
-    setIsEvaluationListModalOpen(false);
-  };
+  setIsEvaluationListModalOpen(false);
+};
 
-  const handleEditEvaluation = (index) => {
-    // Lógica para editar la encuesta
-    console.log(`Editando encuesta ${index}`);
-  };
+const handleEditEvaluation = (index) => {
+  // Lógica para editar la encuesta
+  console.log(`Editando encuesta ${index}`);
 
-  const handleAddEmployees = (index) => {
-    // Lógica para agregar empleados a la encuesta
-    console.log(`Agregando empleados a la encuesta ${index}`);
+  // Abre el modal de edición con los datos de la encuesta seleccionada
+  handleOpenEditModal(evaluations[index]);
+};
+
+const handleAddEmployees = (index) => {
+  // Lógica para agregar empleados a la encuesta
+  console.log(`Agregando empleados a la encuesta ${index}`);
+};
+
+return (
+  <div>
+    {/* Otro contenido del componente */}
+
+    <Modal
+      isOpen={isEditModalOpen}
+      onRequestClose={handleCloseEditModal}
+      contentLabel="Editar Encuesta"
+    >
+      {editingEvaluation && (
+        <EditSurveyModal
+          evaluation={editingEvaluation}
+          onSave={(editedEvaluation) => {
+            // Lógica para guardar la evaluación editada
+            // Puedes definir esta lógica dentro de esta función o pasarla como prop desde fuera
+            console.log("Guardando evaluación editada:", editedEvaluation);
+            // Cierra el modal después de guardar
+            handleCloseEditModal();
+          }}
+          onCancel={handleCloseEditModal}
+        />
+      )}
+    </Modal>
+  </div>
+);
+  const handleDeleteEvaluation = (index) => {
+    const updatedEvaluations = [...evaluations];
+    updatedEvaluations.splice(index, 1);
+    setEvaluations(updatedEvaluations);
+    localStorage.setItem('evaluations', JSON.stringify(updatedEvaluations));
   };
 
   return (
@@ -210,7 +246,9 @@ const SurveyEditor = () => {
           <li key={index}>
             {index === 0 && (
               <div>
-                <strong>TÍTULO DE LA ENCUESTA:</strong> {surveyTitle.toUpperCase()}<br />
+                <strong>TÍTULO DE LA ENCUESTA:</strong> {surveyTitle.toUpperCase()}
+
+                <br />
               </div>
             )}
             {question.text} - <strong>Área de Evaluación:</strong> {question.evaluationArea} - <strong>Tipo de Respuesta:</strong> {question.answerType}
@@ -315,6 +353,7 @@ const SurveyEditor = () => {
               <h3>{evaluation.title}</h3>
               <button onClick={() => handleEditEvaluation(index)}>Editar</button>
               <button onClick={() => handleAddEmployees(index)}>Agregar Empleados</button>
+              <button onClick={() => handleDeleteEvaluation(index)}>Eliminar</button>
             </li>
           ))}
         </ul>
@@ -329,6 +368,5 @@ const SurveyEditor = () => {
     </div>
   );
 };
-
 
 export default SurveyEditor;
