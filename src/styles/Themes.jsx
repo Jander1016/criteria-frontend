@@ -1,6 +1,6 @@
-export const Light ={
+export const Light = {
   body: "#fff",
-  text: "#202020",
+  text: "rgb(45,45,45)",
   bodyRgba: "255, 255, 255",
   textRgba: "32,32,32",
   carouselColor: "#EEEDDE",
@@ -13,16 +13,15 @@ export const Light ={
   fontxxxl: "4em",
   fontButton: "0.875em",
   navHeight: "5rem",
-  whiteBg:"#7250FF",
+  whiteBg: "#7250FF",
   bg: "rgb(255,255,255)",
   bgAlpha: "rgba(250,250,250,.3)",
   bg2: "rgb(245,245,245)",
   bg3: "rgb(230,230,230)",
-  textLight: "rgb(45,45,45)", // Cambiado de 'text' a 'textLight'
   primary: "rgb(52, 131, 235)",
-  bg4:"#9247FC",
-  bgtotal:"#EDF3FB",
-  bgtgderecha:"#fff",
+  bg4: "#9247FC",
+  bgtotal: "#EDF3FB",
+  bgtgderecha: "#fff",
   barrascroll: "#a8a7a7",
 
   gray900: "#000000",
@@ -49,9 +48,9 @@ export const Light ={
 };
 
 export const Dark = {
-  bgtgderecha:"#21252B",
+  bgtgderecha: "#21252B",
   body: "#202020",
-  text: "#fff",
+  text: "rgb(210,210,210)",
   bodyRgba: "32,32,32",
   textRgba: "255, 255, 255",
   carouselColor: "#EEEDDE",
@@ -64,15 +63,14 @@ export const Dark = {
   fontxxxl: "4em",
   fontButton: "0.875em",
   navHeight: "5rem",
-  whiteBg:"#7522e6s",
+  whiteBg: "#7522e6s",
   bg: "rgb(15,15,15)",
   bgAlpha: "rgba(0,0,0,.3)",
   bg2: "rgb(30,30,30)",
   bg3: "rgb(50,50,50)",
-  text: "rgb(210,210,210)",
   primary: "rgb(52, 131, 235)",
-  bg4:"#9247FC",
-  bgtotal:"#21252B",
+  bg4: "#9247FC",
+  bgtotal: "#21252B",
   barrascroll: "#A18AFF",
 
   gray900: "#000000",
@@ -94,6 +92,6 @@ export const Dark = {
   textsecondary: "#f1f1f1",
   texttertiary: "#969593",
   //toggle
-  darkbackground:"linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898", 
+  darkbackground: "linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898",
   darkcheckbox: "#757575"
 };
