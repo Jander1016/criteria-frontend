@@ -50,10 +50,10 @@ const CreateSurvey = () => {
       <div className="survey-section">
         <p style={{ fontSize: "10px" }}>Fecha límite para realizar la encuesta:</p>
         <input
-  type="date"
-  value={deadline ? deadline.toISOString().split('T')[0] : ''}
-  onChange={(event) => setDeadline(new Date(event.target.value))}
-/>
+          type="date"
+          value={deadline}
+          onChange={handleDeadlineChange}
+        />
       </div>
     </div>
   );

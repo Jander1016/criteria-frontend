@@ -2,13 +2,15 @@
 import React from "react";
 import styled from "styled-components";
 import EmployeesList from "../components/EmployeesList/EmployeesList";
+import Userslist from "../components/Users/Userslist";
 
 export function Empleados() {
   return (
     <Container>
       <h1>Empleados</h1>
       <EmployeesContainer>
-        <EmployeesList />
+        {/* <EmployeesList /> */}
+        <Userslist />
       </EmployeesContainer>
     </Container>
   );

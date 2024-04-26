@@ -1,107 +1,56 @@
+import React from "react";
 import styled from "styled-components";
-import SurveyEditor from "../components/SurveyEditor/SurveyEditor";
+import CreateSurvey from "../components/CreateSurvey/CreateSurvey";
+import AreaEvaluation from "../components/AreaEvaluation/AreaEvaluation"; // Ajusta la ruta de acuerdo a la ubicación real del componente
+
+
 
 export function Encuestas() {
+
+  const StyledSelect = styled.select`
+  margin-bottom: 20px; /* Agrega un margen inferior para separar el select del calendario */
+`;
+
   return (
     <Container>
-      <h1>Encuestas</h1>
-      <ContentWrapper>
-<<<<<<< HEAD
-        <SurveyEditor />
-=======
-        <CustomSurveyEditor />
->>>>>>> e64eb0938c02b0a456cf2d94f010ce4f66c4e3b9
-      </ContentWrapper>
+      <h1>Crear Encuesta</h1>
+      <h2>Encuestas</h2>
+      <ContentContainer>
+        <CreateSurvey />
+        <AreaEvaluation />
+      </ContentContainer>
     </Container>
   );
 }
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
 `;
 
-const ContentWrapper = styled.div`
-  max-width: 80%;
-  margin: 0 auto;
-`;
-<<<<<<< HEAD
-
-export default Encuestas;
-=======
-
-const CustomSurveyEditor = styled(SurveyEditor)`
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-}
-
-h2 {
-  text-align: center;
-  color: #333;
-  font-weight: bold;
-}
-
-h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: #ff7f50;
-}
-
-input[type="text"],
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-select {
-  background-color: #fff;
-}
-
-.question-actions {
+const ContentContainer = styled.div`
+  width: 80%;
+  max-width: 800px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #ff7f50;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 8px 16px;
-  font-size: 14px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
-  color: #333;
-}
-
-li strong {
-  font-weight: bold;
-}
-
-p {
-  font-weight: bold;
-  color: #333;
-}
-
-p span {
-  font-weight: normal;
-}
-
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
->>>>>>> e64eb0938c02b0a456cf2d94f010ce4f66c4e3b9
+
+const CreateSurveyWithMarginBottom = styled(CreateSurvey)`
+  margin-bottom: 15px;
+`;
+
+const AreaEvaluationWithMarginBottom = styled(AreaEvaluation)`
+  margin-bottom: 15px;
+`;
+
+const StyledSelect = styled.select`
+  margin-bottom: 15px; /* Agrega un margen inferior para separar el select del calendario */
+`;
