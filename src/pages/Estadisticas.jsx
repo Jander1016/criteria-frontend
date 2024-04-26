@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SurveyEditor from "../components/SurveyEditor/SurveyEditor";
+
 
 export function Estadisticas() {
   return (
@@ -13,7 +13,9 @@ export function Estadisticas() {
   );
 }
 
-
+const Container = styled.div`
+  height: 100vh;
+`;
 
 const ContentWrapper = styled.div`
   max-width: 80%;
@@ -21,6 +23,3 @@ const ContentWrapper = styled.div`
 `;
 
 export default Estadisticas;
-
-
-
